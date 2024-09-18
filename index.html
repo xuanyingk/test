@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DVD rental</title>
+    <!--jquery-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./devextreme/css/dx.common.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./devextreme/css/dx.material.blue.light.css"
+    />
+    <!--bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css"
+      integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!--custom css-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">RENT A DVD</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Trending</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Genre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">My List</a>
+            </li>
+            <!--login & signup-->
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Account</a>
+            </li>
+            <!--about and faq-->
+            <li class="nav-item">
+              <a class="nav-link" href="#questions">FAQ</a>
+            </li>
+          </ul>
+          <!-- <div class="navbar-account-button">
+            <a href="account.html" class="btn btn-outline-light" id="account-button">
+              <i class="bi bi-person-square h4"></i>
+            </a>
+          </div> -->
+          <form class="d-flex" id="search-form">
+            <input
+              class="form-control me-2"
+              type="text"
+              placeholder="Search"
+              id="search-input"
+            />
+            <button
+              class="btn btn-outline-light"
+              type="button"
+              id="search-button"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div
+      id="carousel-hero"
+      class="carousel slide container-fluid"
+      data-bs-ride="carousel"
+    >
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carousel-hero"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carousel-hero"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carousel-hero"
+          data-bs-slide-to="2"
+        ></button
+        >'
+        <button
+          type="button"
+          data-bs-target="#carousel-hero"
+          data-bs-slide-to="3"
+        ></button
+        >'
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./images/black-banner.png"
+            alt="black panther"
+            class="d-block"
+            style="width: 100%"
+          />
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h3>Black Panther</h3>
+            <p>
+              The Break-Through Superhero Movie!<br>T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.
+              <br>
+              <button
+              type="button"
+              class="btn btn-danger mt-3" >
+              Add to My List
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./images/supergirl-banner.jpg"
+            alt="supergirl"
+            class="d-block"
+            style="width: 100%"
+          />
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h3>Supergirl</h3>
+            <p>
+              Adventure Runs In The Family!<br>When the planet Krypton was destroyed in a cosmic holocaust that claimed its great civilization, Kal-El (known to Earth as Superman) was believed to be the only survivor until now.
+              <br>
+              <button
+              type="button"
+              class="btn btn-danger mt-3" >
+              Add to My List
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./images/transformer-banner.jpg"
+            alt="transformer"
+            class="d-block"
+            style="width: 100%"
+          />
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h3>Transformer</h3>
+            <p>
+              From director Michael Bay and executive producer Steven Spielberg comes a thrilling battle between the heroic Autobots and the evil Decepticons. When their epic struggle comes to Earth, all that stands between the Decepticons and ultimate power is a clue held by young Sam Witwicky (Shia LaBeouf). Unaware that he is mankind.
+              <br>
+              <button
+              type="button"
+              class="btn btn-danger mt-3" >
+              Add to My List
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./images/wanda-banner.jpg"
+            alt="scarlett witch"
+            class="d-block"
+            style="width: 100%"
+          />
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h3>Wanda Vision</h3>
+            <p>
+              Vision and Wanda live a normal life in Westview and conceal their superpowers. However, as decades pass by, they start doubting that everything is not what it seems.
+              <br>
+              <button
+              type="button"
+              class="btn btn-danger mt-3" >
+              Add to My List
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel-hero"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel-hero"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="movie-container">
+        <!-- Movie cards will be inserted here -->
+      </div>
+    </div>
+
+     <!--Question Accordion-->
+     <section id="questions" class="p-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion accordion-flush" id="questions">
+          <!--item 1-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one" >
+                How does it work?
+              </button>
+            </h2>
+            <div id="question-one" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#questions">
+              <div class="accordion-body">Our subscription service functions similarly to Netflix DVD. Your queued DVDs will be delivered to your mailbox. When you're finished watching, simply place the DVD in the prepaid envelope and drop it in the mail. Once we receive it, or you notify us, we'll ship the next one from your list.</div>
+            </div>
+          </div>
+          <!--item 2-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two" >
+                How much does it cost to subscribe?
+              </button>
+            </h2>
+            <div id="question-two" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#questions">
+              <div class="accordion-body">Choose from our huge rent by mail selection of new releases, hard-to-find classics, and hidden gems from only $9.99 a month.</div>
+            </div>
+          </div>
+          <!--item 3-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three" >
+                What do I need to know?
+              </button>
+            </h2>
+            <div id="question-three" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#questions">
+              <div class="accordion-body">How rent a dvd works<br>
+                <ol>
+                  <li><i class="bi bi-1-square h5"></i> Build your list - Choose from thousands of movies not found on streaming services.</li>
+                  <li><i class="bi bi-2-square h5"></i> Open your mailbox - We dispatch your disc the next business day with FREE delivery.</li>
+                  <li><i class="bi bi-3-square h5"></i> Enjoy and repeat - Send back with no delivery fees, no due dates and no late fees.</li>              
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!--item 4-->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four" >
+                How do I sign up?
+              </button>
+            </h2>
+            <div id="question-four" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#questions">
+              <div class="accordion-body">Join the club 4 different subscription plan </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Micro</h5>
+                      <h3 class="card-title-price">$9.99</h3>
+                      <p class="card-text">Are you sure you like movies?</p>
+                      <ul>
+                        <li><i class="bi bi-check-lg h5"></i> 2 discs out at a time</li>
+                        <li><i class="bi bi-check-lg h5"></i> 2 discs per month</li>
+                        <li><i class="bi bi-check-lg h5"></i> No late fees</li>
+                        <li><i class="bi bi-check-lg h5"></i> DVDs and Blu-rays</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Choose Micro</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Basic</h5>
+                      <h3 class="card-title-price">$14.99</h3>
+                      <p class="card-text">For occasional movie viewing.</p>
+                      <ul>
+                        <li><i class="bi bi-check-lg h5"></i> 1 disc out at a time</li>
+                        <li><i class="bi bi-check-lg h5"></i> Unlimited discs per month</li>
+                        <li><i class="bi bi-check-lg h5"></i> No late fees</li>
+                        <li><i class="bi bi-check-lg h5"></i> DVDs and Blu-rays</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Choose Basic</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Standard</h5>
+                      <h3 class="card-title-price">$19.99</h3>
+                      <p class="card-text">For most movie fans.</p>
+                      <ul>
+                        <li><i class="bi bi-check-lg h5"></i> 2 discs out at a time</li>
+                        <li><i class="bi bi-check-lg h5"></i> Unlimited discs per month</li>
+                        <li><i class="bi bi-check-lg h5"></i> No late fees</li>
+                        <li><i class="bi bi-check-lg h5"></i> DVDs and Blu-rays</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Choose Standard</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Premium</h5>
+                      <h3 class="card-title-price">$29.99</h3>
+                      <p class="card-text">For the biggest movie fans.</p>
+                      <ul>
+                        <li><i class="bi bi-check-lg h5"></i> 4 discs out at a time</li>
+                        <li><i class="bi bi-check-lg h5"></i> Unlimited discs per month</li>
+                        <li><i class="bi bi-check-lg h5"></i> No late fees</li>
+                        <li><i class="bi bi-check-lg h5"></i> DVDs and Blu-rays</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Choose Premium</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+     </section>
+    
+     <div id="dataGrid"></div>
+    <!--Footer-->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2024 Rent a DVD</p>
+        <a href="#" class="footer-icon p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Modal -->
+    <div
+      class="modal fade"
+      id="movieModal"
+      tabindex="-1"
+      aria-labelledby="movieModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="movieModalLabel">Movie Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Movie details will be injected here -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Add to My List
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--jquery script-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="./devextreme/js/dx.all.js"></script>
+    <script
+      type="text/javascript"
+      src="./devextreme/js/dx.aspnet.data.js"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    
+    <!--bootstrap script-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!--app script-->
+    <script src="app.js"></script>
+  </body>
+</html>
